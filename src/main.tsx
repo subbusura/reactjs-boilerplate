@@ -5,6 +5,7 @@ import mainRouters from "@/pages";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RouterProvider } from "react-router-dom";
 import { ThemeProvider } from "@/context/theme-provider";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 // Create a client
 const queryClient = new QueryClient({
@@ -20,6 +21,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <ThemeProvider defaultTheme="system" storageKey="app-ui-theme">
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={mainRouters}></RouterProvider>
+        <ReactQueryDevtools />
       </QueryClientProvider>
     </ThemeProvider>
   </React.StrictMode>
